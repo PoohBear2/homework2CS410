@@ -47,7 +47,6 @@ def minimax(asp: HeuristicAdversarialSearchProblem[GameState, Action], cutoff_de
 
         ans = -float('inf')
         actions = asp.get_available_actions(state)
-        print("im here again")
         for action in actions:
             
             next = asp.transition(state, action)
@@ -65,7 +64,6 @@ def minimax(asp: HeuristicAdversarialSearchProblem[GameState, Action], cutoff_de
         
         ans = float('inf')
         actions = asp.get_available_actions(state)
-        print("im here")
         for action in actions:
             
             next = asp.transition(state, action)
@@ -78,7 +76,6 @@ def minimax(asp: HeuristicAdversarialSearchProblem[GameState, Action], cutoff_de
 
     for action in actions:
         next = asp.transition(start, action)
-        print(stats)
         temp = min_val(next, 1)
         if temp > ans:
             ans = temp
